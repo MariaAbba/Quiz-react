@@ -30,10 +30,17 @@ const questions = [
 function Result({ correct }) {
   return (
     <div className="result">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png"
-        alt="Result Icon"
-      />
+      {correct > Math.floor(questions.length / 2) ? (
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png"
+          alt="Result Icon"
+        />
+      ) : (
+        <img
+          src="https://cdn.jsdelivr.net/emojione/assets/png/1F61E.png"
+          alt="😞"
+        />
+      )}
       <a href="/">
         <h2>
           {' '}
