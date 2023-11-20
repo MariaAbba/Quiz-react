@@ -30,7 +30,7 @@ const questions = [
 function Result({ correct }) {
   return (
     <div className="result">
-      {correct > Math.floor(questions.length / 2) ? (
+      {correct >= Math.floor(questions.length / 2) ? (
         <img
           src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png"
           alt="Result Icon"
@@ -43,8 +43,7 @@ function Result({ correct }) {
       )}
       <a href="/">
         <h2>
-          {' '}
-          You got {correct} answers out of {questions.length}
+          You got {correct} {correct === 1 ? 'answer' : 'answers'} out of {questions.length}
         </h2>
         <button>Try again</button>
       </a>
